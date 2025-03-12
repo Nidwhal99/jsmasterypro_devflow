@@ -15,14 +15,15 @@ const eslintConfig = [
     ignores: ["components/ui/**/*"],
   },
   ...compat.extends(
-      "next/core-web-vitals",
-      "next/typescript",
-      "standard",
-      "plugin:tailwindcss/recommended",
-      "prettier"
+    "next/core-web-vitals",
+    "next/typescript",
+    "standard",
+    "plugin:tailwindcss/recommended",
+    "prettier"
   ),
   {
     rules: {
+      "max-len": ["error", { code: 80, ignoreStrings: false }],
       "import/order": [
         "error",
         {

@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-// eslint-disable-next-line camelcase
 import { Inter, Space_Grotesk as SpaceGrotesk } from "next/font/google";
 import "./globals.css";
 import React from "react";
@@ -17,8 +16,14 @@ const spaceGrotesk = SpaceGrotesk({
 });
 
 export const metadata: Metadata = {
-  title: "DevFlow",
-  description: "A better version of Stack Overflow",
+  title: "Dev Overflow",
+  description:
+    "A community-driven platform for asking and answering programming questions. " +
+    "Get help, share knowledge, and collaborate with developers from around the world. " +
+    "Explore topics in web development, mobile app development, algorithms, data structures, and more.",
+  icons: {
+    icon: "/images/site-logo.svg",
+  },
 };
 
 export default function RootLayout({
