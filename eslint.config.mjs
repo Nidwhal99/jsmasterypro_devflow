@@ -12,18 +12,18 @@ const compat = new FlatCompat({
 
 const eslintConfig = [
   {
-    ignores: ["components/ui/**/*"],
+    ignores: ["components/ui/**/*", "tailwind.config.ts"],
   },
   ...compat.extends(
     "next/core-web-vitals",
     "next/typescript",
     "standard",
     "plugin:tailwindcss/recommended",
-    "prettier"
+    "prettier",
   ),
   {
     rules: {
-      "max-len": ["error", { code: 80, ignoreStrings: false }],
+      "max-len": ["error", { code: 100, ignoreStrings: false }],
       "import/order": [
         "error",
         {
@@ -58,7 +58,7 @@ const eslintConfig = [
     },
   },
   {
-    files: ["**/*.ts", "**/*.tsx"],
+    files: ["app/**/*.ts", "components/**/*.tsx"],
 
     rules: {
       "no-undef": "off",

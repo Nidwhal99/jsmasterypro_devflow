@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import { Inter, Space_Grotesk as SpaceGrotesk } from "next/font/google";
 import "./globals.css";
-import React, { ReactNode } from "react";
-import ThemesProvider from "@/context/Theme";
-import { Toaster } from "@/components/ui/sonner";
 import { SessionProvider } from "next-auth/react";
+import React, { ReactNode } from "react";
+
 import { auth } from "@/auth";
+import { Toaster } from "@/components/ui/sonner";
+import ThemesProvider from "@/context/Theme";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -22,9 +23,10 @@ const spaceGrotesk = SpaceGrotesk({
 export const metadata: Metadata = {
   title: "Dev Overflow",
   description:
-    "A community-driven platform for asking and answering programming questions. " +
-    "Get help, share knowledge, and collaborate with developers from around the world. " +
-    "Explore topics in web development, mobile app development, algorithms, data structures, and more.",
+    "A community-driven platform for asking and answering programming " +
+    "questions. Get help, share knowledge, and collaborate with developers" +
+    " from around the world. Explore topics in web development, mobile app" +
+    " development, algorithms, data structures, and more.",
   icons: {
     icon: "/images/site-logo.svg",
   },

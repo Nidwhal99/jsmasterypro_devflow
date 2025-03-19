@@ -400,7 +400,12 @@ code {
 
 @layer base {
     :root {
-        --radius: 0.5rem;
+        --radius: 0.2rem;
+        --sidebar-background: bg-light-900;
+    }
+
+    .dark {
+        --sidebar-background: bg-dark-200;
     }
 }
 

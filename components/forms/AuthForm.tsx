@@ -1,6 +1,7 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
+import Link from "next/link";
 import {
   DefaultValues,
   FieldValues,
@@ -21,7 +22,6 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import ROUTES from "@/constants/routes";
-import Link from "next/link";
 
 interface AuthFormProps<T extends FieldValues> {
   schema: ZodType<T>;
@@ -52,7 +52,7 @@ const AuthForm = <T extends FieldValues>({
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(handleSubmit)}
-        className="space-y-6 mt-10"
+        className="mt-10 space-y-6"
       >
         {Object.keys(defaultValues).map((field) => (
           <FormField
@@ -61,9 +61,7 @@ const AuthForm = <T extends FieldValues>({
             name={field as Path<T>}
             render={({ field }) => (
               <FormItem className="flex w-full flex-col gap-2.5">
-                <FormLabel
-                  className={"paragraph-medium text-dark-400_light700"}
-                >
+                <FormLabel className={"paragraph-medium text-dark300_light700"}>
                   {field.name === "email"
                     ? "Email Address"
                     : field.name.charAt(0).toUpperCase() + field.name.slice(1)}
@@ -73,8 +71,9 @@ const AuthForm = <T extends FieldValues>({
                     required
                     type={field.name === "password" ? "password" : "text"}
                     {...field}
-                    className="paragraph-regular background-light-900_dark300
-                    light-border-2 text-dark300 light700 no-focus min-h-12 rounded-1.5 border"
+                    className="paragraph-regular background-light900_dark300
+                    light-border-2 text-dark300_light700 no-focus min-h-12
+                    rounded-1.5 border"
                     {...field}
                   />
                 </FormControl>
@@ -97,7 +96,7 @@ const AuthForm = <T extends FieldValues>({
         </Button>
         {formType === "SIGN_IN" ? (
           <p>
-            Don't have an account?{" "}
+            Don&#39;t have an account?{" "}
             <Link
               className="paragraph-semibold primary-text-gradient"
               href={ROUTES.SIGN_UP}

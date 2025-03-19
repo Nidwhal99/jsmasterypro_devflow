@@ -1,4 +1,9 @@
+import Image from "next/image";
+import Link from "next/link";
 import React from "react";
+
+import NavLinks from "@/components/navigation/navbar/NavLinks";
+import { Button } from "@/components/ui/button";
 import {
   Sheet,
   SheetClose,
@@ -6,11 +11,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import Link from "next/link";
-import Image from "next/image";
 import ROUTES from "@/constants/routes";
-import { Button } from "@/components/ui/button";
-import NavLinks from "@/components/navigation/navbar/NavLinks";
 
 const MobileNavigation = () => {
   return (
@@ -68,7 +69,8 @@ const MobileNavigation = () => {
               <Link href={ROUTES.SIGN_UP}>
                 <Button
                   className="small-medium light-border-2 btn-tertiary
-                  text-dark400_light900 min-h-[41px] w-full rounded-lg border px-4 py-3 shadow-none"
+                text-dark400_light900 min-h-[41px] w-full rounded-lg border
+                 px-4 py-3 shadow-none"
                 >
                   <span className="primary-text-gradient">Sign Up</span>
                 </Button>

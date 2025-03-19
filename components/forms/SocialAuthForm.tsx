@@ -1,11 +1,13 @@
 "use client";
 
-import React from "react";
-import { Button } from "../ui/button";
 import Image from "next/image";
-import { toast } from "sonner";
 import { signIn } from "next-auth/react";
+import React from "react";
+import { toast } from "sonner";
+
 import ROUTES from "@/constants/routes";
+
+import { Button } from "../ui/button";
 
 const SocialAuthForm = () => {
   const buttonClass =
@@ -21,7 +23,7 @@ const SocialAuthForm = () => {
     } catch (error) {
       console.log(error);
 
-      //show error message
+      // show error message
       toast.error("Sign-in Failed", {
         description: () =>
           error instanceof Error
