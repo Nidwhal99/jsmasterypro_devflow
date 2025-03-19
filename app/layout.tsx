@@ -3,7 +3,7 @@ import { Inter, Space_Grotesk as SpaceGrotesk } from "next/font/google";
 import "./globals.css";
 import React, { ReactNode } from "react";
 import ThemesProvider from "@/context/Theme";
-import { Toaster } from "sonner";
+import { Toaster } from "@/components/ui/sonner";
 import { SessionProvider } from "next-auth/react";
 import { auth } from "@/auth";
 
