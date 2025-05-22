@@ -12,7 +12,7 @@ export interface IQuestion {
 
 const QuestionSchema = new Schema<IQuestion>(
   {
-    title: { type: String, required: true, min: 5, max: 100 },
+    title: { type: String, required: true },
     content: { type: String, required: true },
     tags: [{ type: Schema.Types.ObjectId, ref: "Tag" }],
     views: { type: Number, default: 0 },
